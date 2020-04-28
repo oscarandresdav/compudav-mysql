@@ -1,13 +1,15 @@
-import { Entity, Column, CreateDateColumn, UpdateDateColumn, VersionColumn, PrimaryGeneratedColumn } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, VersionColumn } from "typeorm";
 
 @Entity()
-export class Category {
-
+export class UnitOfMeasurement {
     @PrimaryGeneratedColumn('uuid')
     id: string;
 
-    @Column({ length: 45, unique: true })
+    @Column({ length: 255, unique: true })
     name: string;
+
+    @Column({ length: 45, nullable: true })
+    symbol: string;
 
     @Column({ default: true })
     status: boolean;
