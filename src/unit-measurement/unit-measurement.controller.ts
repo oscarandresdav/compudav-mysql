@@ -1,10 +1,10 @@
 import { Controller, Get, Res, HttpStatus, Param, NotFoundException, Post, Body, Put, Query, Delete } from '@nestjs/common';
-import { UnitOfMeasurementService } from './unit-of-measurement.service';
-import { UnitOfMeasurement } from './unit-of-measurement.entity';
+import { UnitMeasurementService } from './unit-measurement.service';
+import { UnitMeasurement } from './unit-measurement.entity';
 
-@Controller('unit-of-measurement')
-export class UnitOfMeasurementController {
-    constructor(private readonly measurementService: UnitOfMeasurementService) { }
+@Controller('unit-measurement')
+export class UnitMeasurementController {
+    constructor(private readonly measurementService: UnitMeasurementService) { }
 
     @Get()
     async findAll(@Res() res) {
@@ -34,7 +34,7 @@ export class UnitOfMeasurementController {
     async update(
         @Res() res,
         @Query('id') id,
-        @Body() measurement: UnitOfMeasurement
+        @Body() measurement: UnitMeasurement
     ) {
         const updatedMeasurement = await this.measurementService.update(id, measurement);
         if (!updatedMeasurement) {

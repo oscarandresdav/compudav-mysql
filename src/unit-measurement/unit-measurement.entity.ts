@@ -1,7 +1,7 @@
 import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, VersionColumn } from "typeorm";
 
 @Entity()
-export class UnitOfMeasurement {
+export class UnitMeasurement {
     @PrimaryGeneratedColumn('uuid')
     id: string;
 

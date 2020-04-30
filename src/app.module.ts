@@ -1,13 +1,15 @@
+import { TypeProductModule } from './type-product/type-product.module';
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
 import { CategoryModule } from './category/category.module';
-import { UnitOfMeasurementModule } from './unit-of-measurement/unit-of-measurement.module';
+import { UnitMeasurementModule } from './unit-measurement/unit-measurement.module';
 
 @Module({
   imports: [
+        TypeProductModule, 
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: 'localhost',
@@ -22,7 +24,7 @@ import { UnitOfMeasurementModule } from './unit-of-measurement/unit-of-measureme
       retryDelay: 1000,
     }),
     CategoryModule,
-    UnitOfMeasurementModule,
+    UnitMeasurementModule,
   ],
   controllers: [AppController],
   providers: [AppService],

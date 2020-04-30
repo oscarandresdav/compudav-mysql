@@ -2,30 +2,30 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 
-import { UnitOfMeasurement } from './unit-of-measurement.entity';
+import { UnitMeasurement } from './unit-measurement.entity';
 
 @Injectable()
-export class UnitOfMeasurementService {
+export class UnitMeasurementService {
     constructor(
-        @InjectRepository(UnitOfMeasurement) private readonly measurement: Repository<UnitOfMeasurement>,
+        @InjectRepository(UnitMeasurement) private readonly measurement: Repository<UnitMeasurement>,
     ) { }
 
-    async findAll(): Promise<UnitOfMeasurement[]> {
+    async findAll(): Promise<UnitMeasurement[]> {
         const measurements = await this.measurement.find();
         return measurements;
     }
 
-    async findOne(id: string): Promise<UnitOfMeasurement> {
+    async findOne(id: string): Promise<UnitMeasurement> {
         const measurement = await this.measurement.findOne(id);
         return measurement;
     }
 
-    async create(newMeasurement: UnitOfMeasurement): Promise<UnitOfMeasurement> {
+    async create(newMeasurement: UnitMeasurement): Promise<UnitMeasurement> {
         const createdMeasurement = this.measurement.save(newMeasurement);
         return createdMeasurement;
     }
 
-    async update(id: string, updateMeasurement: UnitOfMeasurement): Promise<any> {
+    async update(id: string, updateMeasurement: UnitMeasurement): Promise<any> {
         const updatedMeasurement = await this.measurement.update(id, updateMeasurement);
         return updatedMeasurement;
     }
