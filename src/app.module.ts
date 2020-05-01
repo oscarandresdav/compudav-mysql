@@ -6,10 +6,10 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 
 import { CategoryModule } from './category/category.module';
 import { UnitMeasurementModule } from './unit-measurement/unit-measurement.module';
+import { IvaRateModule } from './iva-rate/iva-rate.module';
 
 @Module({
   imports: [
-        TypeProductModule, 
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: 'localhost',
@@ -25,6 +25,8 @@ import { UnitMeasurementModule } from './unit-measurement/unit-measurement.modul
     }),
     CategoryModule,
     UnitMeasurementModule,
+    TypeProductModule, 
+    IvaRateModule
   ],
   controllers: [AppController],
   providers: [AppService],
