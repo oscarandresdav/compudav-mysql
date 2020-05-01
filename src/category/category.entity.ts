@@ -1,4 +1,5 @@
-import { Entity, Column, CreateDateColumn, UpdateDateColumn, VersionColumn, PrimaryGeneratedColumn } from "typeorm";
+import { Entity, Column, CreateDateColumn, UpdateDateColumn, VersionColumn, PrimaryGeneratedColumn, OneToMany } from "typeorm";
+import { Product } from "./../product/product.entity";
 
 @Entity()
 export class Category {
@@ -20,4 +21,7 @@ export class Category {
 
     @VersionColumn()
     revision: number;
+    
+    @OneToMany(type => Product, product => product.name)
+    product: Product;
 }

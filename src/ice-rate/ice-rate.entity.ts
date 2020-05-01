@@ -2,29 +2,31 @@ import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateCol
 import { Product } from "./../product/product.entity";
 
 @Entity()
-export class UnitMeasurement {
+export class IceRate {
     @PrimaryGeneratedColumn('uuid')
     id: string;
 
     @Column({ length: 255, unique: true })
     name: string;
 
-    @Column({ length: 45, nullable: true })
-    symbol: string;
+    @Column({ length: 6, unique: true })
+    code: string;
+
+    @Column({ length: 4, nullable: true })
+    ad_valorem: string;
 
     @Column({ default: true })
     status: boolean;
-    
+
     @CreateDateColumn()
     created_at: Date;
-    
+
     @UpdateDateColumn()
     modified_at: Date;
-    
+
     @VersionColumn()
     revision: number;
 
     @OneToMany(type => Product, product => product.name)
     product: Product;
-
 }

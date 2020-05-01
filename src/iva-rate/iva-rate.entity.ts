@@ -1,4 +1,5 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, VersionColumn } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, VersionColumn, OneToMany } from "typeorm";
+import { Product } from "./../product/product.entity";
 
 @Entity()
 export class IvaRate {
@@ -22,4 +23,7 @@ export class IvaRate {
 
     @VersionColumn()
     revision: number;
+
+    @OneToMany(type => Product, product => product.name)
+    product: Product;
 }

@@ -7,6 +7,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { CategoryModule } from './category/category.module';
 import { UnitMeasurementModule } from './unit-measurement/unit-measurement.module';
 import { IvaRateModule } from './iva-rate/iva-rate.module';
+import { IceRateModule } from './ice-rate/ice-rate.module';
+import { ProductModule } from './product/product.module';
 
 @Module({
   imports: [
@@ -25,10 +27,12 @@ import { IvaRateModule } from './iva-rate/iva-rate.module';
     }),
     CategoryModule,
     UnitMeasurementModule,
-    TypeProductModule, 
-    IvaRateModule
+    TypeProductModule,
+    IvaRateModule,
+    IceRateModule,
+    ProductModule
   ],
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {}
+export class AppModule { }
