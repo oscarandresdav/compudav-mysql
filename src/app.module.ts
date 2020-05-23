@@ -9,6 +9,9 @@ import { UnitMeasurementModule } from './unit-measurement/unit-measurement.modul
 import { IvaRateModule } from './iva-rate/iva-rate.module';
 import { IceRateModule } from './ice-rate/ice-rate.module';
 import { ProductModule } from './product/product.module';
+import { AmbientModule } from './ambient/ambient.module';
+import { CompanyModule } from './company/company.module';
+import { LocationModule } from './location/location.module';
 
 @Module({
   imports: [
@@ -30,7 +33,10 @@ import { ProductModule } from './product/product.module';
     TypeProductModule,
     IvaRateModule,
     IceRateModule,
-    ProductModule
+    ProductModule,
+    AmbientModule,
+    CompanyModule,
+    LocationModule
   ],
   controllers: [AppController],
   providers: [AppService],

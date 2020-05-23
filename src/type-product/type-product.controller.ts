@@ -1,6 +1,7 @@
 import { Controller, Get, Res, HttpStatus, Param, NotFoundException, Post, Body, Put, Query, Delete } from '@nestjs/common';
-import { TypeProductService } from './type-product.service';
+
 import { TypeProduct } from './type-product.entity';
+import { TypeProductService } from './type-product.service';
 
 @Controller('type-product')
 export class TypeProductController {

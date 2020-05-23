@@ -1,12 +1,14 @@
 import { Entity, Column, CreateDateColumn, UpdateDateColumn, VersionColumn, PrimaryGeneratedColumn, OneToMany } from "typeorm";
 
-import { Product } from "./../product/product.entity";
+import { Company } from "src/company/company.entity";
 
 @Entity()
-export class Category {
-
+export class Ambient {
     @PrimaryGeneratedColumn('uuid')
     id: string;
+
+    @Column({ length: 3, unique: true })
+    code: string;
 
     @Column({ length: 45, unique: true })
     name: string;
@@ -22,7 +24,7 @@ export class Category {
 
     @VersionColumn()
     revision: number;
-    
-    @OneToMany(type => Product, product => product.name)
-    product: Product;
+
+    @OneToMany(type => Company, company => company.business_name)
+    company: Company;
 }
