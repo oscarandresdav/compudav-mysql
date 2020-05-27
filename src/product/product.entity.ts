@@ -27,19 +27,19 @@ export class Product {
     cost: number;
     
     @Column({ type: "decimal", precision: 5, scale: 4 })
-    percentagePrice: number
+    percentage_price: number
     
     @Column({ type: "decimal", precision: 10, scale: 4 })
     price: number;
 
     @Column({ type: "decimal", precision: 5, scale: 4 })
-    percentagePrice2: number
+    percentage_price2: number
     
     @Column({ type: "decimal", precision: 10, scale: 4 })
     price2: number;
 
     @Column({ type: "decimal", precision: 5, scale: 4 })
-    percentagePrice3: number
+    percentage_price3: number
     
     @Column({ type: "decimal", precision: 10, scale: 4 })
     price3: number;

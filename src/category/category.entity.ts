@@ -25,4 +25,5 @@ export class Category {
     
     @OneToMany(type => Product, product => product.name)
     product: Product;
+    
 }

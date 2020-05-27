@@ -12,6 +12,11 @@ import { ProductModule } from './product/product.module';
 import { AmbientModule } from './ambient/ambient.module';
 import { CompanyModule } from './company/company.module';
 import { LocationModule } from './location/location.module';
+import { CityModule } from './city/city.module';
+import { ProvinceModule } from './province/province.module';
+import { AddressModule } from './address/address.module';
+import { TypeIdentificationModule } from './type-identification/type-identification.module';
+import { ContactModule } from './contact/contact.module';
 
 @Module({
   imports: [
@@ -36,7 +41,12 @@ import { LocationModule } from './location/location.module';
     ProductModule,
     AmbientModule,
     CompanyModule,
-    LocationModule
+    LocationModule,
+    CityModule,
+    ProvinceModule,
+    AddressModule,
+    TypeIdentificationModule,
+    ContactModule,
   ],
   controllers: [AppController],
   providers: [AppService],

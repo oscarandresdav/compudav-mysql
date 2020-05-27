@@ -1,6 +1,7 @@
-import { Entity, Column, CreateDateColumn, UpdateDateColumn, VersionColumn, PrimaryGeneratedColumn, OneToMany } from "typeorm";
+import { Entity, Column, CreateDateColumn, UpdateDateColumn, VersionColumn, PrimaryGeneratedColumn, OneToMany, ManyToOne } from "typeorm";
 
 import { Company } from "src/company/company.entity";
+import { City } from "src/city/city.entity";
 
 @Entity()
 export class Location {
@@ -42,6 +43,9 @@ export class Location {
 
     @VersionColumn()
     revision: number;
+
+    @ManyToOne(type => City, city => city.id)
+    city: City[];
 
     @OneToMany(type => Company, company => company.business_name)
     company: Company;
