@@ -44,10 +44,10 @@ export class Company {
     @VersionColumn()
     revision: number;
 
-    @ManyToOne(type => Ambient, ambient => ambient.id)
-    ambient: Ambient[];
+    @ManyToOne(type => Ambient, ambient => ambient.companies)
+    ambient: Ambient;
     
-    @ManyToOne(type => Location, location => location.id)
-    location: Location[];
+    @ManyToOne(type => Location, location => location.companies)
+    location: Location;
 
 }

@@ -28,7 +28,7 @@ export class Address {
     @VersionColumn()
     revision: number;
 
-    @ManyToOne(type => City, city => city.id)
-    city: City[];
+    @ManyToOne(type => City, city => city.addresses)
+    city: City;
     
 }

@@ -23,13 +23,13 @@ export class City {
     @VersionColumn()
     revision: number;
 
-    @ManyToOne(type => Province, province => province.id)
-    province: Province[];
+    @ManyToOne(type => Province, province => province.cities)
+    province: Province;
 
-    @OneToMany(type => Location, location => location.name)
-    location: Location;
+    @OneToMany(type => Location, location => location.city)
+    locations: Location[];
 
-    @OneToMany(type => Address, address => address.street)
-    address: Address;
+    @OneToMany(type => Address, address => address.city)
+    addresses: Address[];
 
 }

@@ -22,7 +22,7 @@ export class TypeProduct {
     @VersionColumn()
     revision: number;
 
-    @OneToMany(type => Product, product => product.name)
-    product: Product;
+    @OneToMany(type => Product, product => product.typeProduct)
+    products: Product[];
     
 }

@@ -44,9 +44,9 @@ export class Location {
     @VersionColumn()
     revision: number;
 
-    @ManyToOne(type => City, city => city.id)
-    city: City[];
+    @ManyToOne(type => City, city => city.locations)
+    city: City;
 
-    @OneToMany(type => Company, company => company.business_name)
-    company: Company;
+    @OneToMany(type => Company, company => company.location)
+    companies: Company[];
 }

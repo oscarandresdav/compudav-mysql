@@ -25,7 +25,7 @@ export class UnitMeasurement {
     @VersionColumn()
     revision: number;
 
-    @OneToMany(type => Product, product => product.name)
-    product: Product;
+    @OneToMany(type => Product, product => product.unitMeasurement)
+    products: Product[];
 
 }

@@ -25,6 +25,6 @@ export class Ambient {
     @VersionColumn()
     revision: number;
 
-    @OneToMany(type => Company, company => company.business_name)
-    company: Company;
+    @OneToMany(type => Company, company => company.ambient)
+    companies: Company[];
 }

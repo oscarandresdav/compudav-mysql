@@ -22,7 +22,7 @@ export class Province {
     @VersionColumn()
     revision: number;
 
-    @OneToMany(type => City, city => city.name)
-    city: City;
+    @OneToMany(type => City, city => city.province)
+    cities: City[];
 
 }

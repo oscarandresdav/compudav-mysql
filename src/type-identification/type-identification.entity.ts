@@ -25,7 +25,7 @@ export class TypeIdentification {
     @VersionColumn()
     revision: number;
 
-    @OneToMany(type => Contact, contact => contact.business_name)
-    contact: Contact;
+    @OneToMany(type => Contact, contact => contact.typeIdentification)
+    contacts: Contact[];
     
 }

@@ -49,7 +49,7 @@ export class Contact {
     @VersionColumn()
     revision: number;
 
-    @ManyToOne(type => TypeIdentification, typeIdentification => typeIdentification.id)
-    typeIdentification: TypeIdentification[];
+    @ManyToOne(type => TypeIdentification, typeIdentification => typeIdentification.contacts)
+    typeIdentification: TypeIdentification;
 
 }

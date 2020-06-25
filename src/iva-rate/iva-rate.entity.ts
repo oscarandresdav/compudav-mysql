@@ -25,6 +25,6 @@ export class IvaRate {
     @VersionColumn()
     revision: number;
 
-    @OneToMany(type => Product, product => product.name)
-    product: Product;
+    @OneToMany(type => Product, product => product.ivaRate)
+    products: Product[];
 }

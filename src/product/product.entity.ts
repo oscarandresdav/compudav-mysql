@@ -56,19 +56,19 @@ export class Product {
     @VersionColumn()
     revision: number;
 
-    @ManyToOne(type => Category, category => category.id)
-    category: Category[];
+    @ManyToOne(type => Category, category => category.products)
+    category: Category;
     
-    @ManyToOne(type => IceRate, iceRate => iceRate.id)
-    iceRate: IceRate[];
+    @ManyToOne(type => IceRate, iceRate => iceRate.products)
+    iceRate: IceRate;
 
-    @ManyToOne(type => IvaRate, ivaRate => ivaRate.id)
-    ivaRate: IvaRate[];
+    @ManyToOne(type => IvaRate, ivaRate => ivaRate.products)
+    ivaRate: IvaRate;
 
-    @ManyToOne(type => TypeProduct, typeProduct => typeProduct.id)
-    typeProduct: TypeProduct[];
+    @ManyToOne(type => TypeProduct, typeProduct => typeProduct.products)
+    typeProduct: TypeProduct;
     
-    @ManyToOne(type => UnitMeasurement, measurement => measurement.id)
-    unitMeasurement: UnitMeasurement[];    
+    @ManyToOne(type => UnitMeasurement, measurement => measurement.products)
+    unitMeasurement: UnitMeasurement;    
 
 }
