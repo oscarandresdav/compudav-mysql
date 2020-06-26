@@ -26,7 +26,7 @@ export class CityController {
     async create(@Res() res, @Body() city) {
         const createdCity = await this.cityService.create(city);
         return res.status(HttpStatus.CREATED).json({
-            message: "City has been submitted successfully!",
+            message: 'City has been submitted successfully!',
             post: createdCity,
         });
     }

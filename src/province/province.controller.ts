@@ -26,7 +26,7 @@ export class ProvinceController {
     async create(@Res() res, @Body() province) {
         const createdProvince = await this.provinceService.create(province);
         return res.status(HttpStatus.CREATED).json({
-            message: "Province has been submitted successfully!",
+            message: 'Province has been submitted successfully!',
             post: createdProvince,
         });
     }

@@ -26,7 +26,7 @@ export class ContactController {
     async create(@Res() res, @Body() contact) {
         const createdContact = await this.contactService.create(contact);
         return res.status(HttpStatus.CREATED).json({
-            message: "Contact has been submitted successfully!",
+            message: 'Contact has been submitted successfully!',
             post: createdContact,
         });
     }

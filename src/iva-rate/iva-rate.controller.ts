@@ -26,7 +26,7 @@ export class IvaRateController {
     async create(@Res() res, @Body() ivaRate) {
         const createdIvaRate = await this.ivaRateService.create(ivaRate);
         return res.status(HttpStatus.CREATED).json({
-            message: "IVA rate has been submitted successfully!",
+            message: 'IVA rate has been submitted successfully!',
             post: createdIvaRate,
         });
     }

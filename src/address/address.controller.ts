@@ -26,7 +26,7 @@ export class AddressController {
     async create(@Res() res, @Body() address) {
         const createdAddress = await this.addressService.create(address);
         return res.status(HttpStatus.CREATED).json({
-            message: "Address has been submitted successfully!",
+            message: 'Address has been submitted successfully!',
             post: createdAddress,
         });
     }

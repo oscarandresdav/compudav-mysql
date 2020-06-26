@@ -26,7 +26,7 @@ export class LocationController {
     async create(@Res() res, @Body() company) {
         const createdLocation = await this.locationService.create(company);
         return res.status(HttpStatus.CREATED).json({
-            message: "Location has been submitted successfully!",
+            message: 'Location has been submitted successfully!',
             post: createdLocation,
         });
     }

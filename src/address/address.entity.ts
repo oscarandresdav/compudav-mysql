@@ -1,6 +1,7 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, VersionColumn, ManyToOne } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, VersionColumn, ManyToOne, ManyToMany, JoinTable } from "typeorm";
 
 import { City } from "src/city/city.entity";
+import { Contact } from "src/contact/contact.entity";
 
 @Entity()
 export class Address {
@@ -30,5 +31,9 @@ export class Address {
 
     @ManyToOne(type => City, city => city.addresses)
     city: City;
+
+    @ManyToMany(type => Contact)
+    @JoinTable()
+    contacts: Contact[];
     
 }

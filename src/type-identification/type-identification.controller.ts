@@ -26,7 +26,7 @@ export class TypeIdentificationController {
     async create(@Res() res, @Body() typeIdentification) {
         const createdTypeIdentification = await this.typeIdentificationService.create(typeIdentification);
         return res.status(HttpStatus.CREATED).json({
-            message: "Type of identification has been submitted successfully!",
+            message: 'Type of identification has been submitted successfully!',
             post: createdTypeIdentification,
         });
     }

@@ -26,7 +26,7 @@ export class TypeProductController {
     async create(@Res() res, @Body() typeProduct) {
         const createdTypeProduct = await this.typeProductService.create(typeProduct);
         return res.status(HttpStatus.CREATED).json({
-            message: "Type of product has been submitted successfully!",
+            message: 'Type of product has been submitted successfully!',
             post: createdTypeProduct,
         });
     }

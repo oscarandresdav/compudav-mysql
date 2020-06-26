@@ -26,7 +26,7 @@ export class IceRateController {
     async create(@Res() res, @Body() iceRate) {
         const createdIceRate = await this.iceRateService.create(iceRate);
         return res.status(HttpStatus.CREATED).json({
-            message: "ICE rate has been submitted successfully!",
+            message: 'ICE rate has been submitted successfully!',
             post: createdIceRate,
         });
     }

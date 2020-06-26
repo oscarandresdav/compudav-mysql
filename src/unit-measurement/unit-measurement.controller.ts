@@ -26,7 +26,7 @@ export class UnitMeasurementController {
     async create(@Res() res, @Body() measurement) {
         const createdMeasurement = await this.measurementService.create(measurement);
         return res.status(HttpStatus.CREATED).json({
-            message: "Unit of measurement has been submitted successfully!",
+            message: 'Unit of measurement has been submitted successfully!',
             post: createdMeasurement,
         });
     }

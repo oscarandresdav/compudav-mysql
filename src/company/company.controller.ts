@@ -26,7 +26,7 @@ export class CompanyController {
     async create(@Res() res, @Body() company) {
         const createdCompany = await this.companyService.create(company);
         return res.status(HttpStatus.CREATED).json({
-            message: "Company has been submitted successfully!",
+            message: 'Company has been submitted successfully!',
             post: createdCompany,
         });
     }

@@ -26,7 +26,7 @@ export class AmbientController {
     async create(@Res() res, @Body() ambient) {
         const createdAmbient = await this.ambientService.create(ambient);
         return res.status(HttpStatus.CREATED).json({
-            message: "Ambient has been submitted successfully!",
+            message: 'Ambient has been submitted successfully!',
             post: createdAmbient,
         });
     }

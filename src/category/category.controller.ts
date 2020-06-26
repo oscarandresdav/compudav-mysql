@@ -26,7 +26,7 @@ export class CategoryController {
     async create(@Res() res, @Body() category) {
         const createdCategory = await this.categoryService.create(category);
         return res.status(HttpStatus.CREATED).json({
-            message: "Category has been submitted successfully!",
+            message: 'Category has been submitted successfully!',
             post: createdCategory,
         });
     }

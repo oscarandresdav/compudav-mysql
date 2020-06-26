@@ -17,6 +17,10 @@ import { ProvinceModule } from './province/province.module';
 import { AddressModule } from './address/address.module';
 import { TypeIdentificationModule } from './type-identification/type-identification.module';
 import { ContactModule } from './contact/contact.module';
+import { PaymentMethodModule } from './payment-method/payment-method.module';
+import { TypeIssuanceModule } from './type-issuance/type-issuance.module';
+import { TypeDocumentModule } from './type-document/type-document.module';
+import { StatusDocumentModule } from './status-document/status-document.module';
 
 @Module({
   imports: [
@@ -47,6 +51,10 @@ import { ContactModule } from './contact/contact.module';
     AddressModule,
     TypeIdentificationModule,
     ContactModule,
+    PaymentMethodModule,
+    TypeIssuanceModule,
+    TypeDocumentModule,
+    StatusDocumentModule,
   ],
   controllers: [AppController],
   providers: [AppService],
