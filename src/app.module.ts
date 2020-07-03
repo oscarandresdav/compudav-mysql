@@ -21,6 +21,10 @@ import { PaymentMethodModule } from './payment-method/payment-method.module';
 import { TypeIssuanceModule } from './type-issuance/type-issuance.module';
 import { TypeDocumentModule } from './type-document/type-document.module';
 import { StatusDocumentModule } from './status-document/status-document.module';
+import { CarrierModule } from './carrier/carrier.module';
+import { DocumentModule } from './document/document.module';
+import { RetentionConceptModule } from './retention-concept/retention-concept.module';
+import { RetentionDetailmentModule } from './retention-detailment/retention-detailment.module';
 
 @Module({
   imports: [
@@ -55,6 +59,10 @@ import { StatusDocumentModule } from './status-document/status-document.module';
     TypeIssuanceModule,
     TypeDocumentModule,
     StatusDocumentModule,
+    CarrierModule,
+    DocumentModule,
+    RetentionConceptModule,
+    RetentionDetailmentModule,
   ],
   controllers: [AppController],
   providers: [AppService],
