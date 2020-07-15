@@ -33,7 +33,7 @@ export class Carrier {
     @UpdateDateColumn()
     modified_at: Date;
 
-    @VersionColumn()
+    @VersionColumn({nullable: true})
     revision: number;
     
 }

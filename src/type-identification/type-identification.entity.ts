@@ -22,9 +22,9 @@ export class TypeIdentification {
     @UpdateDateColumn()
     modified_at: Date;
 
-    @VersionColumn()
+    @VersionColumn({nullable: true})
     revision: number;
-
+    
     @OneToMany(type => Contact, contact => contact.typeIdentification)
     contacts: Contact[];
     

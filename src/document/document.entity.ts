@@ -113,8 +113,8 @@ export class Document {
     @UpdateDateColumn()
     modified_at: Date;
     
-    @VersionColumn()
+    @VersionColumn({nullable: true})
     revision: number;
- 
+    
 
 }

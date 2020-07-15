@@ -22,9 +22,9 @@ export class Ambient {
     @UpdateDateColumn()
     modified_at: Date;
 
-    @VersionColumn()
+    @VersionColumn({nullable: true})
     revision: number;
-
+    
     @OneToMany(type => Company, company => company.ambient)
     companies: Company[];
 }

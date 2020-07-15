@@ -20,7 +20,7 @@ export class StatusDocument {
     @UpdateDateColumn()
     modified_at: Date;
     
-    @VersionColumn()
+    @VersionColumn({nullable: true})
     revision: number;
-
+    
 }

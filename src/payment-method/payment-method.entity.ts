@@ -20,7 +20,7 @@ export class PaymentMethod {
     @UpdateDateColumn()
     modified_at: Date;
     
-    @VersionColumn()
+    @VersionColumn({nullable: true})
     revision: number;
-
+    
 }

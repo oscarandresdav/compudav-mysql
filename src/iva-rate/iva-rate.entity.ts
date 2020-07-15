@@ -22,9 +22,9 @@ export class IvaRate {
     @UpdateDateColumn()
     modified_at: Date;
 
-    @VersionColumn()
+    @VersionColumn({nullable: true})
     revision: number;
-
+    
     @OneToMany(type => Product, product => product.ivaRate)
     products: Product[];
 }

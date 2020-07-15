@@ -19,9 +19,9 @@ export class Province {
     @UpdateDateColumn()
     modified_at: Date;
     
-    @VersionColumn()
+    @VersionColumn({nullable: true})
     revision: number;
-
+    
     @OneToMany(type => City, city => city.province)
     cities: City[];
 

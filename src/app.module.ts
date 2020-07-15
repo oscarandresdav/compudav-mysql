@@ -26,6 +26,7 @@ import { DocumentModule } from './document/document.module';
 import { RetentionConceptModule } from './retention-concept/retention-concept.module';
 import { RetentionDetailmentModule } from './retention-detailment/retention-detailment.module';
 import { UserModule } from './user/user.module';
+import { ManufacturerModule } from './manufacturer/manufacturer.module';
 
 @Module({
   imports: [
@@ -65,6 +66,7 @@ import { UserModule } from './user/user.module';
     RetentionConceptModule,
     RetentionDetailmentModule,
     UserModule,
+    ManufacturerModule,
   ],
   controllers: [AppController],
   providers: [AppService],

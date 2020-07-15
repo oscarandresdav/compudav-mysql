@@ -5,6 +5,7 @@ import { IceRate } from "./../ice-rate/ice-rate.entity";
 import { IvaRate } from "./../iva-rate/iva-rate.entity";
 import { TypeProduct } from "./../type-product/type-product.entity";
 import { UnitMeasurement } from "./../unit-measurement/unit-measurement.entity";
+import { Manufacturer } from "src/manufacturer/manufacturer.entity";
 
 @Entity()
 export class Product {
@@ -53,11 +54,14 @@ export class Product {
     @UpdateDateColumn()
     modified_at: Date;
     
-    @VersionColumn()
+    @VersionColumn({nullable: true})
     revision: number;
-
+    
     @ManyToOne(type => Category, category => category.products)
     category: Category;
+    
+    @ManyToOne(type => Manufacturer, manufacturer => manufacturer.products)
+    manufacturer: Manufacturer;
     
     @ManyToOne(type => IceRate, iceRate => iceRate.products)
     iceRate: IceRate;

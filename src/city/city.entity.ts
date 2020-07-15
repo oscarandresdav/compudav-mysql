@@ -20,9 +20,9 @@ export class City {
     @UpdateDateColumn()
     modified_at: Date;
     
-    @VersionColumn()
+    @VersionColumn({nullable: true})
     revision: number;
-
+    
     @ManyToOne(type => Province, province => province.cities)
     province: Province;
 

@@ -20,7 +20,7 @@ export class Category {
     @UpdateDateColumn()
     modified_at: Date;
 
-    @VersionColumn()
+    @VersionColumn({nullable: true})
     revision: number;
     
     @OneToMany(type => Product, product => product.category)

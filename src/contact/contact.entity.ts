@@ -46,9 +46,9 @@ export class Contact {
     @UpdateDateColumn()
     modified_at: Date;
     
-    @VersionColumn()
+    @VersionColumn({nullable: true})
     revision: number;
-
+    
     @ManyToOne(type => TypeIdentification, typeIdentification => typeIdentification.contacts)
     typeIdentification: TypeIdentification;
 

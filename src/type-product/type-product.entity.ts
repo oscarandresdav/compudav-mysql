@@ -19,9 +19,9 @@ export class TypeProduct {
     @UpdateDateColumn()
     modified_at: Date;
 
-    @VersionColumn()
+    @VersionColumn({nullable: true})
     revision: number;
-
+    
     @OneToMany(type => Product, product => product.typeProduct)
     products: Product[];
     

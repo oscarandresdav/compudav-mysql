@@ -23,7 +23,7 @@ export class RetentionConcept {
     @UpdateDateColumn()
     modified_at: Date;
     
-    @VersionColumn()
+    @VersionColumn({nullable: true})
     revision: number;
-
+    
 }

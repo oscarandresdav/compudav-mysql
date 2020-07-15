@@ -41,9 +41,9 @@ export class Company {
     @UpdateDateColumn()
     modified_at: Date;
     
-    @VersionColumn()
+    @VersionColumn({nullable: true})
     revision: number;
-
+    
     @ManyToOne(type => Ambient, ambient => ambient.companies)
     ambient: Ambient;
     

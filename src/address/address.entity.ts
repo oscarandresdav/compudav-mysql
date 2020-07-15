@@ -26,9 +26,9 @@ export class Address {
     @UpdateDateColumn()
     modified_at: Date;
     
-    @VersionColumn()
+    @VersionColumn({nullable: true})
     revision: number;
-
+    
     @ManyToOne(type => City, city => city.addresses)
     city: City;
 
