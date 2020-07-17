@@ -24,6 +24,12 @@ export class Product {
     @Column({ type: "text", nullable: true })
     detail: string;
 
+    @Column()
+    stock: number;
+    
+    @Column()
+    minimum_stock_level: number;
+    
     @Column({ type: "decimal", precision: 10, scale: 4 })
     cost: number;
     
