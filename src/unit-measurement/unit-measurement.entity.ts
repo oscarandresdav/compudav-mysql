@@ -13,6 +13,9 @@ export class UnitMeasurement {
     @Column({ length: 45, nullable: true })
     symbol: string;
 
+    @Column({ type: "smallint", unique: true })
+    sort: number;
+
     @Column({ default: true })
     status: boolean;
     

@@ -13,6 +13,9 @@ export class IvaRate {
     @Column({ length: 3, unique: true })
     code: string;
 
+    @Column({ type: "smallint", unique: true })
+    sort: number;
+
     @Column({ default: true })
     status: boolean;
 

@@ -15,7 +15,7 @@ export class Product {
     @Column({ length: 45, unique: true })
     main_code: string;
     
-    @Column({ length: 45, unique: true })
+    @Column({ length: 45, unique: true, nullable: true })
     aux_code: string;
     
     @Column({ length: 255, unique: true })
@@ -27,28 +27,28 @@ export class Product {
     @Column()
     stock: number;
     
-    @Column()
+    @Column({ nullable: true})
     minimum_stock_level: number;
     
-    @Column({ type: "decimal", precision: 10, scale: 4 })
+    @Column({ type: "decimal", precision: 12, scale: 4 })
     cost: number;
     
-    @Column({ type: "decimal", precision: 5, scale: 4 })
+    @Column({ type: "decimal", precision: 10, scale: 4 })
     percentage_price: number
     
-    @Column({ type: "decimal", precision: 10, scale: 4 })
+    @Column({ type: "decimal", precision: 12, scale: 4 })
     price: number;
 
-    @Column({ type: "decimal", precision: 5, scale: 4 })
+    @Column({ type: "decimal", precision: 10, scale: 4, nullable: true })
     percentage_price2: number
     
-    @Column({ type: "decimal", precision: 10, scale: 4 })
+    @Column({ type: "decimal", precision: 12, scale: 4, nullable: true })
     price2: number;
 
-    @Column({ type: "decimal", precision: 5, scale: 4 })
+    @Column({ type: "decimal", precision: 10, scale: 4, nullable: true })
     percentage_price3: number
     
-    @Column({ type: "decimal", precision: 10, scale: 4 })
+    @Column({ type: "decimal", precision: 12, scale: 4, nullable: true })
     price3: number;
 
     @Column({ default: true })

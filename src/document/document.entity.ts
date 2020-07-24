@@ -23,43 +23,43 @@ export class Document {
     @Column({ length: 49 })
     access_code: string;
         
-    @Column({ type: "decimal", precision: 10, scale: 4 })
+    @Column({ type: "decimal", precision: 12, scale: 4 })
     subtotal: number;
     
-    @Column({ type: "decimal", precision: 10, scale: 4 })
+    @Column({ type: "decimal", precision: 12, scale: 4 })
     additional_discount: number;
     
-    @Column({ type: "decimal", precision: 10, scale: 4 })
+    @Column({ type: "decimal", precision: 12, scale: 4 })
     total_discount: number;
     
-    @Column({ type: "decimal", precision: 10, scale: 4 })
+    @Column({ type: "decimal", precision: 12, scale: 4 })
     subtotal_iva0: number;
     
-    @Column({ type: "decimal", precision: 10, scale: 4 })
+    @Column({ type: "decimal", precision: 12, scale: 4 })
     subtotal_iva12: number;
     
-    @Column({ type: "decimal", precision: 10, scale: 4 })
+    @Column({ type: "decimal", precision: 12, scale: 4 })
     subtotal_no_object_iva: number;
     
-    @Column({ type: "decimal", precision: 10, scale: 4 })
+    @Column({ type: "decimal", precision: 12, scale: 4 })
     subtotal_exempt_from_iva: number;
     
-    @Column({ type: "decimal", precision: 10, scale: 4 })
+    @Column({ type: "decimal", precision: 12, scale: 4 })
     subtotal_without_taxes: number;
     
-    @Column({ type: "decimal", precision: 10, scale: 4 })
+    @Column({ type: "decimal", precision: 12, scale: 4 })
     ice_value: number;
     
-    @Column({ type: "decimal", precision: 10, scale: 4 })
+    @Column({ type: "decimal", precision: 12, scale: 4 })
     irbpnr_value: number;
     
-    @Column({ type: "decimal", precision: 10, scale: 4 })
+    @Column({ type: "decimal", precision: 12, scale: 4 })
     iva_value: number;
     
-    @Column({ type: "decimal", precision: 10, scale: 4 })
+    @Column({ type: "decimal", precision: 12, scale: 4 })
     gratuity_value: number;
     
-    @Column({ type: "decimal", precision: 10, scale: 4 })
+    @Column({ type: "decimal", precision: 12, scale: 4 })
     total_value: number;
 
     @Column({ type: "text", nullable: true })

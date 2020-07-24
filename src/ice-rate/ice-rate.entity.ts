@@ -9,7 +9,7 @@ export class IceRate {
     @Column({ length: 255, unique: true })
     name: string;
 
-    @Column({ length: 6, unique: true })
+    @Column({ length: 6 })
     code: string;
 
     @Column({ length: 4, nullable: true })

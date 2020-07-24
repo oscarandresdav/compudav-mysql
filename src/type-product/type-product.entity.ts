@@ -10,6 +10,9 @@ export class TypeProduct {
     @Column({ length: 45, unique: true })
     name: string;
 
+    @Column({ type: "smallint", unique: true })
+    sort: number;
+
     @Column({ default: true })
     status: boolean;
 
