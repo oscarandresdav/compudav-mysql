@@ -7,31 +7,34 @@ export class Contact {
     @PrimaryGeneratedColumn('uuid')
     id: string;
 
-    @Column({ length: 20, unique: true, nullable: false })
+    @Column({ length: 20, unique: true })
     id_number: string;
     
-    @Column({ length: 255, nullable: false })
+    @Column({ length: 255 })
     business_name: string;
     
-    @Column({ length: 255 })
+    @Column({ length: 255, nullable: true  })
     tradename: string;
     
     @Column({ length: 255 })
+    address: string;
+    
+    @Column({ length: 255, nullable: true })
     landline: string;
     
-    @Column({ length: 255 })
+    @Column({ length: 255, nullable: true })
     mobile_phone: string;
     
-    @Column({ length: 255 })
+    @Column({ length: 255, nullable: true })
     email: string;
 
-    @Column({ default: false })
+    @Column({ default: false, nullable: true })
     client: boolean;
     
-    @Column({ default: false })
+    @Column({ default: false, nullable: true })
     provider: boolean;
     
-    @Column({ default: false })
+    @Column({ default: false, nullable: true })
     special_taxpayer: boolean;
 
     @Column({ type: "text", nullable: true })
