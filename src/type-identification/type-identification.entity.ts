@@ -13,6 +13,9 @@ export class TypeIdentification {
     @Column({ length: 45, unique: true })
     description: string;
 
+    @Column({ type: "smallint", unique: true })
+    sort: number;
+
     @Column({ default: true })
     status: boolean;
 
