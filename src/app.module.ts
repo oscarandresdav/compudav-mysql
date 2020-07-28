@@ -27,6 +27,7 @@ import { RetentionConceptModule } from './retention-concept/retention-concept.mo
 import { RetentionDetailmentModule } from './retention-detailment/retention-detailment.module';
 import { UserModule } from './user/user.module';
 import { ManufacturerModule } from './manufacturer/manufacturer.module';
+import { InvoiceDetailmentModule } from './invoice-detailment/invoice-detailment.module';
 
 @Module({
   imports: [
@@ -67,6 +68,7 @@ import { ManufacturerModule } from './manufacturer/manufacturer.module';
     RetentionDetailmentModule,
     UserModule,
     ManufacturerModule,
+    InvoiceDetailmentModule,
   ],
   controllers: [AppController],
   providers: [AppService],

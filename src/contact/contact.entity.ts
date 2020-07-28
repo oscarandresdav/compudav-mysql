@@ -1,6 +1,7 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, VersionColumn, ManyToOne } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, VersionColumn, ManyToOne, OneToMany } from "typeorm";
 
 import { TypeIdentification } from "src/type-identification/type-identification.entity";
+import { Document } from "src/document/document.entity";
 
 @Entity()
 export class Contact {
@@ -54,5 +55,8 @@ export class Contact {
     
     @ManyToOne(type => TypeIdentification, typeIdentification => typeIdentification.contacts)
     typeIdentification: TypeIdentification;
+
+    @OneToMany(type => Document, document => document.contact)
+    documents: Document[];
 
 }

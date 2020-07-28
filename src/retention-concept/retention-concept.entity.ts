@@ -1,4 +1,5 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, VersionColumn } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, VersionColumn, OneToMany } from "typeorm";
+import { RetentionDetailment } from "src/retention-detailment/retention-detailment.entity";
 
 @Entity()
 export class RetentionConcept {
@@ -25,5 +26,8 @@ export class RetentionConcept {
     
     @VersionColumn({nullable: true})
     revision: number;
+
+    @OneToMany(type => RetentionDetailment, retentionDetailment => retentionDetailment.retentionConcept)
+    retentionDetailments: RetentionDetailment[];
     
 }

@@ -1,4 +1,5 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, VersionColumn } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, VersionColumn, OneToMany } from "typeorm";
+import { Document } from "src/document/document.entity";
 
 @Entity()
 export class Carrier {
@@ -35,5 +36,8 @@ export class Carrier {
 
     @VersionColumn({nullable: true})
     revision: number;
+
+    @OneToMany(type => Document, document => document.carrier)
+    documents: Document[];
     
 }

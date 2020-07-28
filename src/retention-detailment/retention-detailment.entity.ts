@@ -1,4 +1,6 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, VersionColumn } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, VersionColumn, ManyToOne } from "typeorm";
+import { Document } from "src/document/document.entity";
+import { RetentionConcept } from "src/retention-concept/retention-concept.entity";
 
 @Entity()
 export class RetentionDetailment {
@@ -22,5 +24,11 @@ export class RetentionDetailment {
     
     @VersionColumn({nullable: true})
     revision: number;
+
+    @ManyToOne(type => Document, document => document.retentionDetailments)
+    document: Document;
+
+    @ManyToOne(type => RetentionConcept, retentionConcept => retentionConcept.retentionDetailments)
+    retentionConcept: RetentionConcept;
     
 }

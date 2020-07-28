@@ -1,4 +1,5 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, VersionColumn } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, VersionColumn, OneToMany } from "typeorm";
+import { Document } from "src/document/document.entity";
 
 @Entity()
 export class StatusDocument {
@@ -22,5 +23,8 @@ export class StatusDocument {
     
     @VersionColumn({nullable: true})
     revision: number;
+
+    @OneToMany(type => Document, document => document.statusDocument)
+    documents: Document[];
     
 }

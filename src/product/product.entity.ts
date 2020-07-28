@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, VersionColumn, ManyToOne } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, VersionColumn, ManyToOne, OneToMany } from "typeorm";
 
 import { Category } from "./../category/category.entity";
 import { IceRate } from "./../ice-rate/ice-rate.entity";
@@ -6,6 +6,7 @@ import { IvaRate } from "./../iva-rate/iva-rate.entity";
 import { TypeProduct } from "./../type-product/type-product.entity";
 import { UnitMeasurement } from "./../unit-measurement/unit-measurement.entity";
 import { Manufacturer } from "src/manufacturer/manufacturer.entity";
+import { InvoiceDetailment } from "src/invoice-detailment/invoice-detailment.entity";
 
 @Entity()
 export class Product {
@@ -80,5 +81,8 @@ export class Product {
     
     @ManyToOne(type => UnitMeasurement, measurement => measurement.products)
     unitMeasurement: UnitMeasurement;    
+
+    @OneToMany(type => InvoiceDetailment, invoiceDetailment => invoiceDetailment.product)
+    invoiceDetailments: InvoiceDetailment[];
 
 }
