@@ -11,6 +11,9 @@ export class PaymentMethod {
     
     @Column({ length: 3 })
     code: string;
+
+    @Column({ type: "smallint", unique: true })
+    sort: number;
     
     @Column({ default: true })
     status: boolean;
