@@ -17,7 +17,7 @@ export class Contact {
     @Column({ length: 255, nullable: true  })
     tradename: string;
     
-    @Column({ length: 255 })
+    @Column({ length: 255, nullable: true })
     address: string;
     
     @Column({ length: 255, nullable: true })
