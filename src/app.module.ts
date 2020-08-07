@@ -28,6 +28,7 @@ import { RetentionDetailmentModule } from './retention-detailment/retention-deta
 import { UserModule } from './user/user.module';
 import { ManufacturerModule } from './manufacturer/manufacturer.module';
 import { InvoiceDetailmentModule } from './invoice-detailment/invoice-detailment.module';
+import { ParameterModule } from './parameter/parameter.module';
 
 @Module({
   imports: [
@@ -69,6 +70,7 @@ import { InvoiceDetailmentModule } from './invoice-detailment/invoice-detailment
     UserModule,
     ManufacturerModule,
     InvoiceDetailmentModule,
+    ParameterModule,
   ],
   controllers: [AppController],
   providers: [AppService],
