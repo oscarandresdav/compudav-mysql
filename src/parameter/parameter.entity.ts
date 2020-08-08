@@ -17,6 +17,12 @@ export class Parameter {
     @Column({ type: "smallint", default: 8 })
     printerFontSize: number;
 
+    @Column({ type: "smallint", default: 58 })
+    printerPageWidth: number;
+
+    @Column({ type: "smallint", default: 140 })
+    printerPageHeight: number;
+
     @Column({ type: "smallint", default: 0 })
     printerHeaderPositionX: number;
 
