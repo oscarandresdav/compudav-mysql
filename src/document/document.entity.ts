@@ -13,7 +13,7 @@ export class Document {
     @PrimaryGeneratedColumn('uuid')
     id: string;
 
-    @Column({ length: 17, unique: true })
+    @Column({ length: 15 })
     number: string;
     
     @Column()
@@ -31,40 +31,40 @@ export class Document {
     @Column({ length: 49, nullable: true })
     access_code: string;
         
-    @Column({ type: "decimal", precision: 12, scale: 4 })
+    @Column({ type: "decimal", precision: 12, scale: 2 })
     subtotal: number;
     
-    @Column({ type: "decimal", precision: 12, scale: 4 })
+    @Column({ type: "decimal", precision: 12, scale: 2 })
     additional_discount: number;
     
-    @Column({ type: "decimal", precision: 12, scale: 4 })
+    @Column({ type: "decimal", precision: 12, scale: 2 })
     total_discount: number;
     
-    @Column({ type: "decimal", precision: 12, scale: 4 })
+    @Column({ type: "decimal", precision: 12, scale: 2 })
     subtotal_iva0: number;
     
-    @Column({ type: "decimal", precision: 12, scale: 4 })
+    @Column({ type: "decimal", precision: 12, scale: 2 })
     subtotal_iva12: number;
     
-    @Column({ type: "decimal", precision: 12, scale: 4 })
+    @Column({ type: "decimal", precision: 12, scale: 2, nullable: true })
     subtotal_no_object_iva: number;
     
-    @Column({ type: "decimal", precision: 12, scale: 4 })
+    @Column({ type: "decimal", precision: 12, scale: 2, nullable: true })
     subtotal_exempt_from_iva: number;
     
-    @Column({ type: "decimal", precision: 12, scale: 4 })
+    @Column({ type: "decimal", precision: 12, scale: 2, nullable: true })
     subtotal_without_taxes: number;
     
-    @Column({ type: "decimal", precision: 12, scale: 4 })
+    @Column({ type: "decimal", precision: 12, scale: 2, nullable: true })
     ice_value: number;
     
-    @Column({ type: "decimal", precision: 12, scale: 4 })
+    @Column({ type: "decimal", precision: 12, scale: 4, nullable: true })
     irbpnr_value: number;
     
     @Column({ type: "decimal", precision: 12, scale: 4 })
     iva_value: number;
     
-    @Column({ type: "decimal", precision: 12, scale: 4 })
+    @Column({ type: "decimal", precision: 12, scale: 4, nullable: true })
     gratuity_value: number;
     
     @Column({ type: "decimal", precision: 12, scale: 4 })
@@ -136,7 +136,7 @@ export class Document {
     @ManyToOne(type => Contact, contact => contact.documents)
     contact: Contact;
     
-    @ManyToOne(type => Carrier, carrier => carrier.documents)
+    @ManyToOne(type => Carrier, carrier => carrier.documents, { nullable: true })
     carrier: Carrier;
     
     @ManyToOne(type => PaymentMethod, paymentMethod => paymentMethod.documents)

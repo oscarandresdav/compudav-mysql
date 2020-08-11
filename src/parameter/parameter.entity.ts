@@ -40,6 +40,9 @@ export class Parameter {
     
     @Column({ type: "smallint", default: 0 })
     printerFooterPositionY: number;
+    
+    @Column({ length: 15 })
+    numberInvoice: string;
 
     @Column({ default: true })
     status: boolean;

@@ -7,13 +7,13 @@ export class InvoiceDetailment {
     @PrimaryGeneratedColumn('uuid')
     id: string;
 
-    @Column({ type: "decimal", precision: 12, scale: 4 })
+    @Column({ type: "decimal", precision: 12, scale: 2 })
     quantity: number;
     
     @Column({ type: "decimal", precision: 12, scale: 4, nullable: true })
     unitary_discount: number;
     
-    @Column({ type: "decimal", precision: 12, scale: 4 })
+    @Column({ type: "decimal", precision: 12, scale: 2 })
     subtotal: number;
     
     @Column({ type: "text", nullable: true })
