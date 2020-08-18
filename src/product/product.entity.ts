@@ -28,8 +28,11 @@ export class Product {
     @Column()
     stock: number;
     
-    @Column({ nullable: true})
+    @Column({ default: 0})
     minimum_stock_level: number;
+    
+    @Column({ default: 0})
+    stock_indicator: number;
     
     @Column({ type: "decimal", precision: 12, scale: 4 })
     cost: number;
@@ -40,17 +43,26 @@ export class Product {
     @Column({ type: "decimal", precision: 12, scale: 4 })
     price: number;
 
+    @Column({ type: "decimal", precision: 12, scale: 2, nullable: true })
+    pvp: number;
+
     @Column({ type: "decimal", precision: 10, scale: 4, nullable: true })
     percentage_price2: number
     
     @Column({ type: "decimal", precision: 12, scale: 4, nullable: true })
     price2: number;
 
+    @Column({ type: "decimal", precision: 12, scale: 2, nullable: true })
+    pvp2: number;
+
     @Column({ type: "decimal", precision: 10, scale: 4, nullable: true })
     percentage_price3: number
     
     @Column({ type: "decimal", precision: 12, scale: 4, nullable: true })
     price3: number;
+
+    @Column({ type: "decimal", precision: 12, scale: 2, nullable: true })
+    pvp3: number;
 
     @Column({ default: true })
     status: boolean;

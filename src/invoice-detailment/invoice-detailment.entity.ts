@@ -13,7 +13,7 @@ export class InvoiceDetailment {
     @Column({ type: "decimal", precision: 12, scale: 4, nullable: true })
     unitary_discount: number;
     
-    @Column({ type: "decimal", precision: 12, scale: 2 })
+    @Column({ type: "decimal", precision: 12, scale: 4 })
     subtotal: number;
     
     @Column({ type: "text", nullable: true })
